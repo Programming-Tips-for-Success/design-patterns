@@ -1,14 +1,14 @@
-// Each of the following options will create a new empty object:
+// Creational Design Patterns: 
+
+//  3 options to create a new empty object:
  
 var newObject = {};
- 
 // or
 var newObject2 = Object.create( Object.prototype );
- 
 // or
 var newObject3 = new Object();
  
-// There are then four ways in which keys and values can then be assigned to an object:
+// Four ways in which keys and values can then be assigned to an object:
 // ECMAScript 3 compatible approaches
  
 // 1. Dot syntax
@@ -44,8 +44,7 @@ Object.defineProperty( newObject, "someKey", {
     configurable: true
 });
  
-// If the above feels a little difficult to read, a short-hand could
-// be written as follows:
+// If the above feels a little difficult to read, a short-hand could be written as follows:
  
 var defineProp = function ( obj, key, value ){
   var config = {
@@ -89,7 +88,7 @@ Object.defineProperties( newObject, {
 // Getting properties for 3. and 4. can be done using any of the
 // options in 1. and 2.
  
-// these methods can also be used for inheritance
+// These methods can also be used for inheritance
  
 // Create a race car driver that inherits from the person object
 var driver = Object.create( person );
@@ -104,7 +103,8 @@ console.log( driver.dateOfBirth );
 console.log( driver.topSpeed );
  
  
-//  a single instance of toString() will now be shared between all of the Car objects // Constructors With Prototypes
+//  a single instance of toString() will now be shared between all of the Car objects 
+// Constructors With Prototypes
 function Car( model, year, miles ) {
  
   this.model = model;
@@ -148,8 +148,6 @@ console.log( mondeo.toString() );
 var civic = new Car2( "Honda Civic", 2009, 20000 );
 var mondeo = new Car2( "Ford Mondeo", 2010, 5000 );
  
-// and then open our browser console to view the
-// output of the toString() method being called on
-// these objects
+// and then open our browser console to view the  output of the toString() method being called o these objects
 console.log( civic.toString() );
 console.log( mondeo.toString() );

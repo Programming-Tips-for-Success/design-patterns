@@ -38,7 +38,7 @@ class Adapter extends Target {
   /**
  * The client code supports all classes that follow the Target interface.
  */
-   function clientCode(target: Target) {
+function clientCode(target: Target) {
     console.log(target.request());
   }
 
