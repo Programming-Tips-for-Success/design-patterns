@@ -1,5 +1,7 @@
 
- 
+// (Method - Virtual Constructor) 
+
+
 abstract class Creator {
  
   public abstract factoryMethod(): Product;

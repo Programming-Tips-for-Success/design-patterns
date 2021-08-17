@@ -1,6 +1,11 @@
 // structural design pattern 
 // lets you  attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 
+// Method decorators are a tool for reusing common logic. They are complementary to Object-Oriented Programming. Decorators encapsulate responsibility shared by different objects. Decorators let programmers modify and/or tag methods, classes, properties and parameters. 
+
+ 
+ 
+
 /**
  * The base Component interface defines operations that can be altered by
  * decorators.

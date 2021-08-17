@@ -1,7 +1,11 @@
- 
+// allows objects with incompatible interfaces to collaborate.
+// stock market data example
+// conversion of units 
+
+
 class Target {
     public request(): string {
-        return 'Target: The default target\'s behavior.';
+        return 'Target: The default target\'s behavior. Target-request()';
     }
 }
  
@@ -12,7 +16,7 @@ class Target {
  */
 class Adaptee {
     public specificRequest(): string {
-        return '.eetpadA eht fo roivaheb laicepS';
+        return 'Adaptee-specificRequest';
     }
 }
  
@@ -29,7 +33,8 @@ class Adapter extends Target {
     }
  
     public request(): string {
-        const result = this.adaptee.specificRequest().split('').reverse().join('');
+        // const result = this.adaptee.specificRequest().split('').reverse().join('');
+        const result = this.adaptee.specificRequest();
         return `Adapter: (TRANSLATED) ${result}`;
     }
 }
@@ -39,26 +44,21 @@ class Adapter extends Target {
  * The client code supports all classes that follow the Target interface.
  */
 function clientCode(target: Target) {
-    console.log(target.request());
+    console.log(target.request(), 'clientCode');
   }
 
-console.log('Client: I can work just fine with the Target objects:');
 const target = new Target();
 clientCode(target);
  
-console.log('');
- 
+
 const adaptee = new Adaptee();
-console.log('Client: The Adaptee class has a weird interface. See, I don\'t understand it:');
-console.log(`Adaptee: ${adaptee.specificRequest()}`);
+console.log(`instance Adaptee: ${adaptee.specificRequest()}`);
  
-console.log('');
- 
-console.log('Client: But I can work with it via the Adapter:');
+
 const adapter = new Adapter(adaptee);
 clientCode(adapter);
  
 
 
- 
- 
+// tsc Structural/adapter.ts
+// node Structural/adapter.js

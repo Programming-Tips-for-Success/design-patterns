@@ -2,11 +2,24 @@
 
 //  split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 
+
+/**
+ * The Implementation defines the interface for all implementation classes. It
+ * doesn't have to match the Abstraction's interface. In fact, the two
+ * interfaces can be entirely different. Typically the Implementation interface
+ * provides only primitive operations, while the Abstraction defines higher-
+ * level operations based on those primitives.
+ */
+ interface Implementation {
+    operationImplementation(): string;
+}
+
 /**
  * The Abstraction defines the interface for the "control" part of the two class
  * hierarchies. It maintains a reference to an object of the Implementation
  * hierarchy and delegates all of the real work to this object.
  */
+
  class Abstraction {
     protected implementation: Implementation;
 
@@ -30,16 +43,7 @@ class ExtendedAbstraction extends Abstraction {
     }
 }
 
-/**
- * The Implementation defines the interface for all implementation classes. It
- * doesn't have to match the Abstraction's interface. In fact, the two
- * interfaces can be entirely different. Typically the Implementation interface
- * provides only primitive operations, while the Abstraction defines higher-
- * level operations based on those primitives.
- */
-interface Implementation {
-    operationImplementation(): string;
-}
+
 
 /**
  * Each Concrete Implementation corresponds to a specific platform and
@@ -66,7 +70,7 @@ class ConcreteImplementationB implements Implementation {
 function clientCode(abstraction: Abstraction) {
     // ..
 
-    console.log(abstraction.operation());
+    console.log(abstraction.operation(), 'clientCode');
 
     // ..
 }
@@ -79,8 +83,9 @@ let implementation = new ConcreteImplementationA();
 let abstraction = new Abstraction(implementation);
 clientCode(abstraction);
 
-console.log('');
-
 implementation = new ConcreteImplementationB();
 abstraction = new ExtendedAbstraction(implementation);
 clientCode(abstraction);
+
+// tsc Structural/bridge.ts 
+// node Structural/bridge.js

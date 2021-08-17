@@ -1,5 +1,9 @@
 // Creational Design Patterns: 
 
+// In classical object-oriented programming languages, a constructor is a special method used to initialize a newly created object once the memory has been allocated for it.
+
+// Object constructors are used to creating specific types of objects - both preparing the object for use and accepting arguments which a constructor can use to set the values of member properties and methods when the object is first created.
+
 //  3 options to create a new empty object:
  
 var newObject = {};
