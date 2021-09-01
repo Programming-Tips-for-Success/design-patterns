@@ -1,3 +1,8 @@
+
+// data driven design pattern
+// in this an object is used to encapsulate all information needed to perform an action or trigger an event at a later time.  Four terms always associated with the command pattern are command, receiver, invoker and client
+// turns a request into a stand-alone object that contains all information about the request.
+
 /**
  * The Command interface declares a method for executing a command.
  */

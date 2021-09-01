@@ -1,4 +1,5 @@
-// structural design pattern
+// Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system.
+// the facade pattern is appropriate when you have a complex system that you want to expose to clients in a simplified way
 
 class Facade {
     protected subsystem1: Subsystem1;

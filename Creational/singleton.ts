@@ -1,5 +1,5 @@
 
- 
+//  ensure that a class has only single instance and provide a global point to access it
 
 class Singleton {
   private static instance: Singleton;

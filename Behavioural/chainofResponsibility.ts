@@ -1,3 +1,8 @@
+
+// lets you pass requests along a chain of handlers.
+// creates a chain of receiver objects for a request.
+// a source of command objects and a series of processing objects
+
 /**
  * The Handler interface declares a method for building the chain of handlers.
  * It also declares a method for executing a request.
@@ -102,3 +107,5 @@ console.log('');
 
 console.log('Subchain: Squirrel > Dog\n');
 clientCode(squirrel);
+
+// tsc Behavioural/chainofResponsibility.ts 

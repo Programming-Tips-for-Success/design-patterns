@@ -1,4 +1,5 @@
-
+// lets you produce families of related objects without specifying their concrete classes.
+// we get rid of if-else block and have a factory class for each sub-class. 
  
 interface AbstractFactory {
   createProductA(): AbstractProductA;

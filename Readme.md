@@ -1,6 +1,6 @@
 # About
 
-Design patterns in ts
+23 popular Design patterns in ts
 
 # Setup
 
@@ -15,8 +15,5 @@ For normal file without classes
 direct run 
 node filename.ts
 
- tsc Behavioural/chainofResponsibility.ts 
+https://www.velotio.com/engineering-blog/design-patterns-in-es6
 
- Some behavioural patterns include: 
-
-Mediator, Observer, Visitor, State, Memento, Strategy, Template Method

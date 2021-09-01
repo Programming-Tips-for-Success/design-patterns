@@ -1,7 +1,7 @@
 
 // (Method - Virtual Constructor) 
 
-
+// create object without exposing the creation logic to the client and refer to newly created object using a common interface. basically use factory methods to deal with the problem of creating objects .
 abstract class Creator {
  
   public abstract factoryMethod(): Product;

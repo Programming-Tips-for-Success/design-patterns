@@ -1,5 +1,6 @@
-//  structural design pattern
 
+// lets you provide a substitute or placeholder for another object.
+// proxy means an object representing another object
 /**
  * The Subject interface declares common operations for both RealSubject and the
  * Proxy. As long as the client works with RealSubject using this interface,
