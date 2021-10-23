@@ -1,7 +1,17 @@
+// Decorating in programming is simply wrapping one piece of code with another, thereby decorating it.
+// Decorators enable us to write cleaner code by providing an efficient and understandable way of wrapping one piece of code with another. 
+// It also provides a clean syntax for applying this wrapper.
+// It lets you  attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+// decorators are a tool for reusing common logic. They are complementary to Object-Oriented Programming. 
+// Decorators encapsulate responsibility shared by different objects. 
+// Decorators let programmers modify and/or tag methods, classes, properties and parameters. 
 
-// lets you  attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+// Two types-
+// Function decorators
+// take a function as an argument and return a new function that enhances the function argument without modifying it.
 
-// Method decorators are a tool for reusing common logic. They are complementary to Object-Oriented Programming. Decorators encapsulate responsibility shared by different objects. Decorators let programmers modify and/or tag methods, classes, properties and parameters. 
+// Class Decorators
+// A Class Decorator is declared just before a class declaration. The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition
 
  
  
@@ -86,10 +96,10 @@ function clientCode(component: Component) {
 /**
  * This way the client code can support both simple components...
  */
-const simple = new ConcreteComponent();
-console.log('Client: I\'ve got a simple component:');
-clientCode(simple);
-console.log('');
+// const simple = new ConcreteComponent();
+// console.log('Client: I\'ve got a simple component:');
+// clientCode(simple);
+// console.log('');
 
 /**
  * ...as well as decorated ones.
@@ -97,7 +107,49 @@ console.log('');
  * Note how decorators can wrap not only simple components but the other
  * decorators as well.
  */
-const decorator1 = new ConcreteDecoratorA(simple);
-const decorator2 = new ConcreteDecoratorB(decorator1);
-console.log('Client: Now I\'ve got a decorated component:');
-clientCode(decorator2);
+// const decorator1 = new ConcreteDecoratorA(simple);
+// const decorator2 = new ConcreteDecoratorB(decorator1);
+// console.log('Client: Now I\'ve got a decorated component:');
+// clientCode(decorator2);
+
+// ==================
+
+const logger = (message) => console.log(message)
+
+function loggerDecorator (logger) {
+    return function (message) {
+        logger.call(this, message)
+        console.log("message logged at:", new Date().toLocaleString())
+    }
+}
+
+const decoratedLogger = loggerDecorator(logger); // decorated the logger function by using the loggerDecorator
+
+// logger("Lawrence logged in: logger") // returns Lawrence logged in: logger
+
+// decoratedLogger("Lawrence logged in: decoratedLogger") 
+
+// ========================
+//ordinary multiply function
+let Multiply = (...args) => {
+    return args.reduce((a, b) => a * b)
+}
+
+// validated integers
+const Validator = (fn) => {
+  return function(...args) {
+    const validArgs = args.every(arg => !isNaN(arg));
+    if (!validArgs) {
+      throw new TypeError('Argument cannot be a non-integer');
+    }
+    return fn(...args);
+  }
+}
+
+//decorated multiply function that only multiplies integers
+// let MultiplyValidArgs = Validator(Multiply);
+// logger(MultiplyValidArgs(1, 2, 3, 4, 5)) //returns 120
+
+
+
+// tsc Structural/decorator.ts && node Structural/decorator.js

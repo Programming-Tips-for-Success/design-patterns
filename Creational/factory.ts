@@ -73,4 +73,33 @@ clientCode(new ConcreteCreator2());
 
 
 
+// Factory Object Creation Pattern
+
+// https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript
+
+// function makeRobot(name, job) {
+//   return {
+//     name: name,
+//     job: job,
+     
+//     introduce: function() {
+//       console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
+//     },
+//   };
+// }
+ 
+// var bender = makeRobot("Bender", "bending");
+// bender.introduce();   // Hi! I'm Bender. My job is bending.
+ 
+// var wallE = makeRobot("Wall-E", "trash collection");
+// wallE.introduce();    // Hi! I'm Wall-E. My job is trash collection.
+// //  Constructor Pattern
+// function Robot(name, job) {
+//   this.name = name;
+//   this.job = job;
+ 
+//   this.introduce = function() {
+//     console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
+//   };
+// }
 
