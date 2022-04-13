@@ -1,7 +1,7 @@
 # About
 
 23 popular Design patterns in ts
- Angular design patterns, 
+Angular design patterns, 
 # Setup
 
 # Run
