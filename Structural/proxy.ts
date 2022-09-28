@@ -1,6 +1,5 @@
 
-// lets you provide a substitute or placeholder for another object.
-// proxy means an object representing another object
+
 /**
  * The Subject interface declares common operations for both RealSubject and the
  * Proxy. As long as the client works with RealSubject using this interface,
@@ -86,5 +85,5 @@ console.log('Client: Executing the same client code with a proxy:');
 const proxy = new Proxy(realSubject);
 clientCode(proxy);
 
-// tsc Structural/proxy.ts     
-//  node Structural/proxy.js
+
+// ts-node Structural/proxy.ts

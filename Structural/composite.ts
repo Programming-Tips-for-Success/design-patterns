@@ -1,5 +1,4 @@
-// aka- Object Tree
-// compose objects into tree structures and then work with these structures as if they were individual objects
+
 
 /**
  * The base Component class declares common operations for both simple and
@@ -157,3 +156,5 @@ function clientCode2(component1: Component, component2: Component) {
 
 console.log('Client: I don\'t need to check the components classes even when managing the tree:');
 clientCode2(tree, simple);
+
+// ts-node Structural/composite.ts

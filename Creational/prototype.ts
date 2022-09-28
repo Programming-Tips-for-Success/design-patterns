@@ -1,7 +1,5 @@
  
-// copy existing objects without making your code dependent on their classes. basically used to create duplicate object while keeping performance in mind. clone your object and make copy
 
-// Prototype patterns is required, when object creation is time consuming, and costly operation, so we create object with existing object itself.
 class Prototype {
   public primitive: any;
   public component: object;
@@ -69,3 +67,5 @@ function clientCode() {
 }
  
 clientCode();
+
+// ts-node Creational/prototype.ts

@@ -1,6 +1,5 @@
 
-//  ensure that a class has only single instance and provide a global point to access it
-// https://blog.bitsrc.io/the-singleton-pattern-in-typescript-b906303fda93
+
 class Singleton {
   private static instance: Singleton;
  
@@ -51,3 +50,5 @@ function clientCode() {
  }
 
  clientCode();
+
+ // ts-node Creational/singleton.ts

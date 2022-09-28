@@ -1,26 +1,10 @@
-// Decorating in programming is simply wrapping one piece of code with another, thereby decorating it.
-// Decorators enable us to write cleaner code by providing an efficient and understandable way of wrapping one piece of code with another. 
-// It also provides a clean syntax for applying this wrapper.
-// It lets you  attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
-// decorators are a tool for reusing common logic. They are complementary to Object-Oriented Programming. 
-// Decorators encapsulate responsibility shared by different objects. 
-// Decorators let programmers modify and/or tag methods, classes, properties and parameters. 
 
-// Two types-
-// Function decorators
-// take a function as an argument and return a new function that enhances the function argument without modifying it.
-
-// Class Decorators
-// A Class Decorator is declared just before a class declaration. The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition
-
- 
- 
 
 /**
  * The base Component interface defines operations that can be altered by
  * decorators.
  */
- interface Component {
+interface Component1 {
     operation(): string;
 }
 
@@ -28,7 +12,7 @@
  * Concrete Components provide default implementations of the operations. There
  * might be several variations of these classes.
  */
-class ConcreteComponent implements Component {
+class ConcreteComponent implements Component1 {
     public operation(): string {
         return 'ConcreteComponent';
     }
@@ -41,10 +25,10 @@ class ConcreteComponent implements Component {
  * include a field for storing a wrapped component and the means to initialize
  * it.
  */
-class Decorator implements Component {
-    protected component: Component;
+class Decorator implements Component1 {
+    protected component: Component1;
 
-    constructor(component: Component) {
+    constructor(component: Component1) {
         this.component = component;
     }
 
@@ -85,7 +69,7 @@ class ConcreteDecoratorB extends Decorator {
  * way it can stay independent of the concrete classes of components it works
  * with.
  */
-function clientCode(component: Component) {
+function clientCode(component: Component1) {
     // ...
 
     console.log(`RESULT: ${component.operation()}`);
@@ -96,10 +80,10 @@ function clientCode(component: Component) {
 /**
  * This way the client code can support both simple components...
  */
-// const simple = new ConcreteComponent();
-// console.log('Client: I\'ve got a simple component:');
-// clientCode(simple);
-// console.log('');
+const simple1 = new ConcreteComponent();
+console.log('Client: I\'ve got a simple component:');
+clientCode(simple1);
+console.log('');
 
 /**
  * ...as well as decorated ones.
@@ -107,10 +91,10 @@ function clientCode(component: Component) {
  * Note how decorators can wrap not only simple components but the other
  * decorators as well.
  */
-// const decorator1 = new ConcreteDecoratorA(simple);
-// const decorator2 = new ConcreteDecoratorB(decorator1);
-// console.log('Client: Now I\'ve got a decorated component:');
-// clientCode(decorator2);
+const decorator1 = new ConcreteDecoratorA(simple);
+const decorator2 = new ConcreteDecoratorB(decorator1);
+console.log('Client: Now I\'ve got a decorated component:');
+clientCode(decorator2);
 
 // ==================
 
@@ -152,4 +136,4 @@ const Validator = (fn) => {
 
 
 
-// tsc Structural/decorator.ts && node Structural/decorator.js
+// ts-node Structural/decorator.ts

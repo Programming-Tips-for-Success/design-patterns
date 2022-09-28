@@ -1,7 +1,10 @@
-
-// lets you pass requests along a chain of handlers.
-// creates a chain of receiver objects for a request.
-// a source of command objects and a series of processing objects
+// overview-
+// interface
+// abstract class
+// class
+// class
+// class
+// function
 
 /**
  * The Handler interface declares a method for building the chain of handlers.
@@ -73,7 +76,7 @@ class DogHandler extends AbstractHandler {
  * The client code is usually suited to work with a single handler. In most
  * cases, it is not even aware that the handler is part of a chain.
  */
-function clientCode(handler: Handler) {
+function clientCode1(handler: Handler) {
     const foods = ['Nut', 'Banana', 'Cup of coffee'];
 
     for (const food of foods) {
@@ -102,10 +105,10 @@ monkey.setNext(squirrel).setNext(dog);
  * first one in the chain.
  */
 console.log('Chain: Monkey > Squirrel > Dog\n');
-clientCode(monkey);
+clientCode1(monkey);
 console.log('');
 
 console.log('Subchain: Squirrel > Dog\n');
-clientCode(squirrel);
+clientCode1(squirrel);
 
-// tsc Behavioural/chainofResponsibility.ts 
+// ts-node Behavioural/chainofResponsibility.ts 

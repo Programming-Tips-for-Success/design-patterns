@@ -1,13 +1,5 @@
-// aka Cache
 
-//  lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
 
-/**
- * The Flyweight stores a common portion of the state (also called intrinsic
- * state) that belongs to multiple real business entities. The Flyweight accepts
- * the rest of the state (extrinsic state, unique for each entity) via its
- * method parameters.
- */
  class Flyweight {
     private sharedState: any;
 
@@ -103,5 +95,5 @@ addCarToPoliceDatabase(factory, 'CL234IR', 'James Doe', 'BMW', 'X1', 'red');
 
 factory.listFlyweights();
 
-// tsc Structural/flyweight.ts
-//  node Structural/flyweight.js
+
+// ts-node Structural/flyweight.ts

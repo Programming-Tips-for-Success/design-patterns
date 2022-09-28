@@ -1,12 +1,7 @@
-// allows sequential traversal through a complex data structure without exposing its internal details.
-
-/**
- * Iterator Design Pattern
- *
- * Intent: Lets you traverse elements of a collection without exposing its
- * underlying representation (list, stack, tree, etc.).
- */
-
+// overview
+// 2 interface
+// class
+// class
  interface Iterator<T> {
     // Return the current element.
     current(): T;
@@ -140,5 +135,4 @@ while (reverseIterator.valid()) {
 }
 
 
-// tsc Behavioural/iterator.ts
-// node Behavioural/iterator.js
+// ts-node Behavioural/iterator.ts

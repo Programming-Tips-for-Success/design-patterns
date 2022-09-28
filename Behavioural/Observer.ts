@@ -1,3 +1,0 @@
-// in this an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
-// used when there is one-to-many relationship between objects such as if one object is modified, all the dependent objects should be notified and updated automatically.
-// specifies communication between objects: observable and observers

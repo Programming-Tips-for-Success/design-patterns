@@ -1,7 +1,9 @@
-
-// data driven design pattern
-// in this an object is used to encapsulate all information needed to perform an action or trigger an event at a later time.  Four terms always associated with the command pattern are command, receiver, invoker and client
-// turns a request into a stand-alone object that contains all information about the request.
+// overview
+// interface
+// class
+// class
+// class
+// class
 
 /**
  * The Command interface declares a method for executing a command.
@@ -127,3 +129,6 @@ const receiver = new Receiver();
 invoker.setOnFinish(new ComplexCommand(receiver, 'Send email', 'Save report'));
 
 invoker.doSomethingImportant();
+
+
+   // ts-node Behavioural/command.ts

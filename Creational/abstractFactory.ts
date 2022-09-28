@@ -1,6 +1,4 @@
-// lets you produce families of related objects without specifying their concrete classes.
-// we get rid of if-else block and have a factory class for each sub-class. 
- 
+
 interface AbstractFactory {
   createProductA(): AbstractProductA;
  
@@ -137,5 +135,7 @@ console.log('');
  
 console.log('Client: Testing the same client code with the second factory type...');
 clientCode(new ConcreteFactory2());
+
+// ts-node Creational/abstractFactory.ts
 
  

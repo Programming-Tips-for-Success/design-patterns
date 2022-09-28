@@ -1,6 +1,4 @@
-// allows objects with incompatible interfaces to collaborate.
-// stock market data example
-// conversion of units 
+
 
 
 class Target {
@@ -60,5 +58,5 @@ clientCode(adapter);
  
 
 
-// tsc Structural/adapter.ts
-// node Structural/adapter.js
+
+// ts-node Structural/adapter.ts

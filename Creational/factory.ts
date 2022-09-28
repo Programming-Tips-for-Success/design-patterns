@@ -1,7 +1,10 @@
+// eq1
+// abstract class
+// 2 class
+// interface
+// 2 class
+// function
 
-// (Method - Virtual Constructor) 
-
-// create object without exposing the creation logic to the client and refer to newly created object using a common interface. basically use factory methods to deal with the problem of creating objects .
 abstract class Creator {
  
   public abstract factoryMethod(): Product;
@@ -64,42 +67,64 @@ function clientCode(creator: Creator) {
     console.log(creator.someOperation());
 }
 
-console.log('App: Launched with the ConcreteCreator1.');
-clientCode(new ConcreteCreator1());
-console.log('');
+// console.log('App: Launched with the ConcreteCreator1.');
+// clientCode(new ConcreteCreator1());
+// console.log('');
 
-console.log('App: Launched with the ConcreteCreator2.');
-clientCode(new ConcreteCreator2());
+// console.log('App: Launched with the ConcreteCreator2.');
+// clientCode(new ConcreteCreator2());
 
+// eg
+interface Vehicle {
+  fetchSeats(): number;
+  isSharingAllowed(): boolean;
+}
 
+class Newcar implements Vehicle{
 
-// Factory Object Creation Pattern
+  fetchSeats() {
+      return 4;
+  }
 
-// https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript
+  isSharingAllowed() {
+      return true;
+  }
+}
 
-// function makeRobot(name, job) {
-//   return {
-//     name: name,
-//     job: job,
-     
-//     introduce: function() {
-//       console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
-//     },
-//   };
-// }
- 
-// var bender = makeRobot("Bender", "bending");
-// bender.introduce();   // Hi! I'm Bender. My job is bending.
- 
-// var wallE = makeRobot("Wall-E", "trash collection");
-// wallE.introduce();    // Hi! I'm Wall-E. My job is trash collection.
-// //  Constructor Pattern
-// function Robot(name, job) {
-//   this.name = name;
-//   this.job = job;
- 
-//   this.introduce = function() {
-//     console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
-//   };
-// }
+class Bike implements Vehicle {
 
+  fetchSeats() {
+      return 1;
+  }
+
+ isSharingAllowed() {
+      return false;
+  }
+}
+
+class VehicleCreationFactory {
+  createVehicleObject(vehicle) {
+    console.log(vehicle, 'vehicle');
+    
+      if(vehicle == "BIKE") {
+          return new Bike();
+      } else {
+          return new Newcar();
+      }
+  }
+}
+
+class VehicleBookingController {
+    main() {
+      const factory = new VehicleCreationFactory();
+
+      console.log("Enter the Vehicle name you want to book: ");
+
+      const v = factory.createVehicleObject("BIKE");
+      console.log("Vehicle that you have booked have "+v.fetchSeats()+" seats.");
+  }
+}
+
+const d = new VehicleBookingController();
+d.main();
+// ts-node Creational/factory.ts

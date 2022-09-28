@@ -1,7 +1,4 @@
-// provide a flexible solution to various object creation problems
-// construct complex objects step by step
-// provides clear separation between the construction and representation of an object
-// gives better control and return final object
+
  
 
 interface Builder {
@@ -143,3 +140,4 @@ function clientCode(director: Director) {
 const director = new Director();
 clientCode(director);
  
+// ts-node Creational/builder.ts

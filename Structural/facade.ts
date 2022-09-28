@@ -1,5 +1,4 @@
-// Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system.
-// the facade pattern is appropriate when you have a complex system that you want to expose to clients in a simplified way
+
 
 class Facade {
     protected subsystem1: Subsystem1;
@@ -10,7 +9,7 @@ class Facade {
      * Depending on your application's needs, you can provide the Facade with
      * existing subsystem objects or force the Facade to create them on its own.
      */
-    constructor(subsystem1: Subsystem1 = null, subsystem2: Subsystem2 = null) {
+    constructor(subsystem1: Subsystem1, subsystem2: Subsystem2) {
         this.subsystem1 = subsystem1 || new Subsystem1();
         this.subsystem2 = subsystem2 || new Subsystem2();
     }
@@ -88,5 +87,5 @@ const subsystem2 = new Subsystem2();
 const facade = new Facade(subsystem1, subsystem2);
 clientCode(facade);
 
-// tsc Structural/facade.ts 
-// node Structural/facade.js 
+
+// ts-node Structural/facade.ts
