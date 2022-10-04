@@ -120,7 +120,7 @@ class ConcreteProductB2 implements AbstractProductB {
 * types: AbstractFactory and AbstractProduct. This lets you pass any factory or
 * product subclass to the client code without breaking it.
 */
-function clientCode(factory: AbstractFactory) {
+function testFactory(factory: AbstractFactory) {
     const productA = factory.createProductA();
     const productB = factory.createProductB();
    
@@ -129,12 +129,119 @@ function clientCode(factory: AbstractFactory) {
   }
 
 console.log('Client: Testing client code with the first factory type...');
-clientCode(new ConcreteFactory1());
+testFactory(new ConcreteFactory1());
  
 console.log('');
  
 console.log('Client: Testing the same client code with the second factory type...');
-clientCode(new ConcreteFactory2());
+testFactory(new ConcreteFactory2());
+
+// e.g
+
+interface Layout {
+  getSize();
+  getNavBar();
+}
+
+class WinLayout implements Layout{
+
+  getSize() {
+      return 8;
+  }
+
+  getNavBar() {
+      return "right";
+  }
+}
+
+class MacLayout implements Layout{
+
+  getSize() {
+      return 5;
+  }
+
+  getNavBar() {
+      return "left";
+  }
+}
+
+interface Buttons {
+  getMinimizeLocation();
+  getCloseLocation();
+}
+
+class MacButtons implements Buttons{
+  
+  getMinimizeLocation() {
+      return "leftTop";
+  }
+
+  
+  getCloseLocation() {
+      return "leftTop";
+  }
+}
+
+class WinButtons implements Buttons{
+  
+  getMinimizeLocation() {
+      return "rightTop";
+  }
+
+  
+   getCloseLocation() {
+      return "rightTop";
+  }
+}
+
+interface AbstractApp {
+  createLayout();
+  createButtons();
+}
+
+ class WindowsApp implements AbstractApp{
+  
+   createLayout() {
+      return new WinLayout();
+  }
+
+  
+   createButtons() {
+      return new WinButtons();
+  }
+}
+
+ class MacApp implements AbstractApp{
+  
+  createLayout() {
+      return new MacLayout();
+  }
+
+  
+  createButtons() {
+      return new MacButtons();
+  }
+}
+
+class Client {
+
+  layout;
+  buttons;
+
+  constructor(app: AbstractApp) {
+      this.layout = app.createLayout();
+      this.buttons = app.createButtons();
+  }
+
+  openApp() {
+      console.log("I am able to open my app");
+      console.log("layout of my App \n Screen size : "+ this.layout.getSize()+" , NavBar : "+ this.layout.getNavBar());
+      console.log("Buttons of my App \n minimize : "+this.buttons.getMinimizeLocation()+" , close : "+this.buttons.getCloseLocation());
+  }
+}
+
+const n = new Client(new WindowsApp());
+n.openApp();
 
 // ts-node Creational/abstractFactory.ts
 
