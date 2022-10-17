@@ -24,7 +24,7 @@ class RealSubject implements Subject {
 /**
  * The Proxy has an interface identical to the RealSubject.
  */
-class Proxy implements Subject {
+class Proxy2 implements Subject {
     private realSubject: RealSubject;
 
     /**
@@ -82,7 +82,7 @@ clientCode(realSubject);
 console.log('');
 
 console.log('Client: Executing the same client code with a proxy:');
-const proxy = new Proxy(realSubject);
+const proxy = new Proxy2(realSubject);
 clientCode(proxy);
 
 

@@ -118,7 +118,7 @@ class Director {
 * initiates the construction process. The end result is retrieved from the
 * builder object.
 */
-function clientCode(director: Director) {
+function clientCodeNew(director: Director) {
     const builder = new ConcreteBuilder1();
     director.setBuilder(builder);
    
@@ -138,6 +138,6 @@ function clientCode(director: Director) {
 }
 
 const director = new Director();
-clientCode(director);
+clientCodeNew(director);
  
 // ts-node Creational/builder.ts

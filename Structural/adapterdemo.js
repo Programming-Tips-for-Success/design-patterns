@@ -19,7 +19,7 @@ const res = [{
  };
   
  const highchartsAdapter = (response, mapping) => {
-    console.log(response, mapping, 'highchartsAdapter');
+   //  console.log(response, mapping, 'highchartsAdapter');
   return response.map(item => {
     const normalized = {};
   
@@ -29,6 +29,6 @@ const res = [{
   });
  };
   
-const vf = highchartsAdapter(res, mapping);
-console.log(vf, 'vd');
+const data = highchartsAdapter(res, mapping);
+console.log(data, 'data');
 // node Structural/adapterdemo.js
