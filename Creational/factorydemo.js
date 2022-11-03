@@ -72,9 +72,10 @@ class PushNotification {
     this.job = job;
   
     this.introduce = function() {
-      console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
+    return  console.log("Hi! I'm " + this.name + ". My job is " + this.job + ".");
     };
   }
-  console.log('test');
 
-   // node Creational/factory.js
+  var wallE2 = new Robot("Wall-E", "trash collection");
+  wallE2.introduce();    // Hi! I'm Wall-E. My job is trash collection.
+   // node Creational/factorydemo.js

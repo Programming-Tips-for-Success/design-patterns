@@ -130,9 +130,7 @@ function testFactory(factory: AbstractFactory) {
 
 console.log('Client: Testing client code with the first factory type...');
 testFactory(new ConcreteFactory1());
- 
-console.log('');
- 
+  
 console.log('Client: Testing the same client code with the second factory type...');
 testFactory(new ConcreteFactory2());
 

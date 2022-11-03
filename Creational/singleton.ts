@@ -38,7 +38,7 @@ class Singleton {
  
 
 
-function clientCode() {
+function clientCodeS() {
    const s1 = Singleton.getInstance();
    const s2 = Singleton.getInstance();
 
@@ -49,6 +49,6 @@ function clientCode() {
    }
  }
 
- clientCode();
+ clientCodeS();
 
  // ts-node Creational/singleton.ts

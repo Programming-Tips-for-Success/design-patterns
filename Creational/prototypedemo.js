@@ -48,5 +48,8 @@ function Calculator() {
   const scientificCalc = new ScienticCalculator();
   console.log(calc);
   console.log(scientificCalc);
+  console.log(calc.add(2));
+  console.log(scientificCalc.add(2));
+
 
   // node Creational/prototypedemo.js

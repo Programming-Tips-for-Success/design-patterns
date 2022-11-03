@@ -1,3 +1,4 @@
+// Virtual Constructor
 // eq1
 // abstract class
 // 2 class

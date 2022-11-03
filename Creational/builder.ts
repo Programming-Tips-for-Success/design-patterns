@@ -8,6 +8,21 @@ interface Builder {
 }
  
 /**
+* It makes sense to use the Builder pattern only when your products are quite
+* complex and require extensive configuration.
+*
+* Unlike in other creational patterns, different concrete builders can produce
+* unrelated products. In other words, results of various builders may not
+* always follow the same interface.
+*/
+class Product1 {
+    public parts: string[] = [];
+   
+    public listParts(): void {
+        console.log(`Product parts: ${this.parts.join(', ')}\n`);
+    }
+}
+/**
 * The Concrete Builder classes follow the Builder interface and provide
 * specific implementations of the building steps. Your program may have several
 * variations of Builders, implemented differently.
@@ -62,23 +77,7 @@ class ConcreteBuilder1 implements Builder {
       return result;
   }
 }
- 
-/**
-* It makes sense to use the Builder pattern only when your products are quite
-* complex and require extensive configuration.
-*
-* Unlike in other creational patterns, different concrete builders can produce
-* unrelated products. In other words, results of various builders may not
-* always follow the same interface.
-*/
-class Product1 {
-  public parts: string[] = [];
- 
-  public listParts(): void {
-      console.log(`Product parts: ${this.parts.join(', ')}\n`);
-  }
-}
- 
+
 /**
 * The Director is only responsible for executing the building steps in a
 * particular sequence. It is helpful when producing products according to a
