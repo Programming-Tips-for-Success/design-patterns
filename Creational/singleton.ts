@@ -51,4 +51,81 @@ function clientCodeS() {
 
  clientCodeS();
 
+ // another example
+
+ class FoodLogger {
+    foodLog;
+  constructor() {
+    this.foodLog = []
+  }
+    
+  log(order) {
+    this.foodLog.push(order.foodItem)
+    console.log(this, order, 'this');
+    
+    // do fancy code to send this log somewhere
+  }
+}
+
+// this is the singleton
+class FoodLoggerSingleton {
+  private static instance;
+    
+  constructor() {
+    if (!FoodLoggerSingleton.instance) {
+      FoodLoggerSingleton.instance = new FoodLogger()
+    }
+  }
+  
+  getFoodLoggerInstance() {
+    return FoodLoggerSingleton.instance
+  }
+}
+
+// module.exports = FoodLoggerSingleton
+
+// An example of a Customer class using the singleton
+
+// const FoodLogger = require('./FoodLogger')
+
+const foodLogger = new FoodLoggerSingleton().getFoodLoggerInstance()
+
+
+class Customer {
+    price;
+    food;
+  constructor(order) {
+    this.price = order.price
+    this.food = order.foodItem
+    foodLogger.log(order)
+  }
+  
+  // other cool stuff happening for the customer
+}
+
+console.log();
+// module.exports = Customer
+
+// An example of the Restaurant class using the same singleton as the Customer class
+
+// const FoodLogger = require('./FoodLogger')
+
+const foodLogger2 = new FoodLoggerSingleton().getFoodLoggerInstance()
+
+class Restaurant {
+    quantity;
+    food;
+  constructor(inventory) {
+    this.quantity = inventory.count
+    this.food = inventory.foodItem
+    foodLogger2.log(inventory)
+  }
+  
+  // other cool stuff happening at the restaurant
+}
+
+const hbj = new Restaurant({count:1, foodItem: 'scd'});
+const hbj1 = new Restaurant({count:12, foodItem: 'scd2'});
+
+// module.exports = Restaurant
  // ts-node Creational/singleton.ts

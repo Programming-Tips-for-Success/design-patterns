@@ -135,5 +135,78 @@ const Validator = (fn) => {
 // logger(MultiplyValidArgs(1, 2, 3, 4, 5)) //returns 120
 
 
+// another example
+class Customer2 {
+    balance;
+    foodItems;
+    constructor(balance=20) {
+      this.balance = balance
+      this.foodItems = []
+    }
+    
+    buy(food) {
+      if (food.price < this.balance) {
+        console.log('you should get it')
+        this.balance -= food.price
+        this.foodItems.push(food)
+      }
+      else {
+        console.log('maybe you should get something else')
+      }
+    }
+  }
+  
+  class Sandwich {
+    type;
+    price;
+    constructor(type, price) {
+      this.type = type
+      this.price = price
+    }
+    
+    order() {
+      console.log(`You ordered a ${this.type} sandwich for $ ${this.price}.`)
+    }
+  }
+  
+  class DeluxeSandwich {
+    type;
+    price;
+    constructor(baseSandwich) {
+      this.type = `Deluxe ${baseSandwich.type}`
+      this.price = baseSandwich.price + 1.75
+    }
+  }
+  
+  class ExquisiteSandwich {
+    type;
+    price;
+    constructor(baseSandwich) {
+      this.type = `Exquisite ${baseSandwich.type}`
+      this.price = baseSandwich.price + 10.75
+    }
+    
+    order() {
+      console.log(`You ordered an ${this.type} sandwich. It's got everything you need to be happy for days.`)
+    }
+  }
+  
+//   module.exports = { Sandwich, DeluxeSandwich, ExquisiteSandwich }
+  
+//   module.exports = Customer2
+
+// const { Sandwich, DeluxeSandwich, ExquisiteSandwich } = require('./Sandwich')
+// const Customer = require('./Customer')
+
+const cust1 = new Customer2(57)
+
+const turkeySandwich = new Sandwich('Turkey', 6.49)
+const bltSandwich = new Sandwich('BLT', 7.55)
+
+const deluxeBltSandwich = new DeluxeSandwich(bltSandwich)
+const exquisiteTurkeySandwich = new ExquisiteSandwich(turkeySandwich)
+
+cust1.buy(turkeySandwich)
+cust1.buy(bltSandwich)
 
 // ts-node Structural/decorator.ts
