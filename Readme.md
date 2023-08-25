@@ -1,4 +1,4 @@
-JavaScript, TS, angular design patterns.
+JS, TS, angular design patterns.
 
 // tsc module.ts
 // node module.js
