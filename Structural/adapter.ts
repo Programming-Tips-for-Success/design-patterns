@@ -41,12 +41,12 @@ class Adapter extends Target {
   /**
  * The client code supports all classes that follow the Target interface.
  */
-function clientCode(target: Target) {
-    console.log(target.request(), 'clientCode');
+function supportTarget(target: Target) {
+    console.log(target.request(), 'supportTarget');
   }
 
 const target = new Target();
-clientCode(target);
+supportTarget(target);
  
 
 const adaptee = new Adaptee();
@@ -54,7 +54,7 @@ console.log(`instance Adaptee: ${adaptee.specificRequest()}`);
  
 
 const adapter = new Adapter(adaptee);
-clientCode(adapter);
+supportTarget(adapter);
  
 
 
