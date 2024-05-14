@@ -177,4 +177,24 @@ console.log(civic.toString());
 console.log(mondeo.toString());
 
 
+var o = {};
+o.constructor === Object; // true
+var o1 = new Object;
+o1.constructor === Object; // true
+var a = [];
+a.constructor === Array; // true
+var a = new Array;
+a.constructor === Array; // true
+var n1 = new Number(3);
+n1.constructor === Number; // true
+function Tree(name) {
+this.name = name;
+}
+var theTree = new Tree('Redwood');
+console.log('theTree.constructor is ' + theTree.constructor);
+// This example displays the following output:
+// theTree.constructor is function Tree(name) {
+// this.name = name;
+// }
+
 // node Creational/constructor.ts
