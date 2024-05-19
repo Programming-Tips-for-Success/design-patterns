@@ -210,3 +210,4 @@ cust1.buy(turkeySandwich)
 cust1.buy(bltSandwich)
 
 // ts-node Structural/decorator.ts
+// tsc Structural/decorator.ts && node Structural/decorator.js
