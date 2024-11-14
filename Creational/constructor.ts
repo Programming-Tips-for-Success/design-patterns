@@ -89,22 +89,7 @@ console.log(person, 'person');
 // Outputs: Object {car: "Delorean", dateOfBirth: "1981", hasBeard: false}
 
 
-// 4. Object.defineProperties
 
-// Set properties
-Object.defineProperties(newObject, {
-
-  "someKey": {
-    value: "Hello World",
-    writable: true
-  },
-
-  "anotherKey": {
-    value: "Foo bar",
-    writable: false
-  }
-
-});
 
 // Getting properties for 3. and 4. can be done using any of the
 // options in 1. and 2.
