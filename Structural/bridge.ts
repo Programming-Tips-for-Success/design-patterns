@@ -57,10 +57,10 @@ class ConcreteImplementationB implements Implementation {
  * the Abstraction class. This way the client code can support any abstraction-
  * implementation combination.
  */
-function clientCode(abstraction: Abstraction) {
+function clientCodeAbstraction(abstraction: Abstraction) {
     // ..
 
-    console.log(abstraction.operation(), 'clientCode');
+    console.log(abstraction.operation(), 'clientCodeAbstraction');
 
     // ..
 }
@@ -71,10 +71,10 @@ function clientCode(abstraction: Abstraction) {
  */
 let implementation = new ConcreteImplementationA();
 let abstraction = new Abstraction(implementation);
-clientCode(abstraction);
+clientCodeAbstraction(abstraction);
 
 implementation = new ConcreteImplementationB();
 abstraction = new ExtendedAbstraction(implementation);
-clientCode(abstraction);
+clientCodeAbstraction(abstraction);
 
 // ts-node Structural/bridge.ts 

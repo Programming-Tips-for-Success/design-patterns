@@ -69,7 +69,7 @@ class Subsystem2 {
  * the client might not even know about the existence of the subsystem. This
  * approach lets you keep the complexity under control.
  */
-function clientCode(facade: Facade) {
+function clientCodeinterface(facade: Facade) {
     // ...
 
     console.log(facade.operation());
@@ -85,7 +85,7 @@ function clientCode(facade: Facade) {
 const subsystem1 = new Subsystem1();
 const subsystem2 = new Subsystem2();
 const facade = new Facade(subsystem1, subsystem2);
-clientCode(facade);
+clientCodeinterface(facade);
 
 
 // ts-node Structural/facade.ts

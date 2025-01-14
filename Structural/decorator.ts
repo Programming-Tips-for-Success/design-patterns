@@ -69,7 +69,7 @@ class ConcreteDecoratorB extends Decorator {
  * way it can stay independent of the concrete classes of components it works
  * with.
  */
-function clientCode(component: Component1) {
+function clientCodeoperation(component: Component1) {
     // ...
 
     console.log(`RESULT: ${component.operation()}`);
@@ -82,7 +82,7 @@ function clientCode(component: Component1) {
  */
 const simple1 = new ConcreteComponent();
 console.log('Client: I\'ve got a simple component:');
-clientCode(simple1);
+clientCodeoperation(simple1);
 console.log('');
 
 /**
@@ -94,7 +94,7 @@ console.log('');
 const decorator1 = new ConcreteDecoratorA(simple);
 const decorator2 = new ConcreteDecoratorB(decorator1);
 console.log('Client: Now I\'ve got a decorated component:');
-clientCode(decorator2);
+clientCodeoperation(decorator2);
 
 // ==================
 

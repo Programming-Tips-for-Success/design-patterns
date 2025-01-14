@@ -2,12 +2,12 @@
 // 2 interface
 // class
 // class
- interface Iterator<T> {
+interface Iterator<T> {
     // Return the current element.
     current(): T;
 
     // Return the current element and move forward to next element.
-    next(): T;
+    next(): IteratorResult<T>;
 
     // Return the key of the current element.
     key(): number;
@@ -67,10 +67,10 @@ class AlphabeticalOrderIterator implements Iterator<string> {
         return this.position;
     }
 
-    public next(): string {
+    public next(): IteratorResult<string> {
         const item = this.collection.getItems()[this.position];
         this.position += this.reverse ? -1 : 1;
-        return item;
+        return { value: item, done: !this.valid() };
     }
 
     public valid(): boolean {

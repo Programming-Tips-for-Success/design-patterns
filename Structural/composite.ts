@@ -107,7 +107,7 @@ class Composite extends Component {
 /**
  * The client code works with all of the components via the base interface.
  */
-function clientCode(component: Component) {
+function clientCodeUsage(component: Component) {
     // ...
 
     console.log(`RESULT: ${component.operation()}`);
@@ -120,7 +120,7 @@ function clientCode(component: Component) {
  */
 const simple = new Leaf();
 console.log('Client: I\'ve got a simple component:');
-clientCode(simple);
+clientCodeUsage(simple);
 console.log('');
 
 /**
@@ -135,7 +135,7 @@ branch2.add(new Leaf());
 tree.add(branch1);
 tree.add(branch2);
 console.log('Client: Now I\'ve got a composite tree:');
-clientCode(tree);
+clientCodeUsage(tree);
 console.log('');
 
 /**
